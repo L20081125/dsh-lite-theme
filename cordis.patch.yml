@@ -1,0 +1,13 @@
+# dsh-lite-theme bundle patch: adds the anime theme plugin to the web
+# profile. One row, two faces:
+#   - host side: lib/index.js taps the webServer index transform to inject
+#     the visual-enhancement assets (wallpaper layer, effects, fonts,
+#     workshop UI styles) into every index.html response;
+#   - client side: the same package declares dsh.client (platform: web), so
+#     client-modules scans this row into the browser roster and serves
+#     /plugins/dsh-lite-theme/client.js, whose apply(ctx) registers the
+#     anime themes into the official ctx.theme registry.
+
+- insert:
+    - id: lite-theme
+      name: 'dsh-lite-theme'
